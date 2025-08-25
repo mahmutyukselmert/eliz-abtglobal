@@ -1,0 +1,348 @@
+/* Yakınlaşma ve Uzaklaşma Animasyonu */
+@keyframes zoom-and-move {
+    0% {
+        transform: scale(1) translateY(0);
+    }
+
+    25% {
+        transform: scale(1.1) translateY(-10px);
+    }
+
+    50% {
+        transform: scale(1.2) translateY(0);
+    }
+
+    75% {
+        transform: scale(1.1) translateY(10px);
+    }
+
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Carousel Slider */
+#carouselSlider {
+    position: relative;
+    overflow: hidden;
+
+    .carousel-inner {
+        height: calc(100vh);
+        z-index: 0;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 1;
+            background: linear-gradient(to bottom,
+                    rgb(0 0 0 / 65%) 10%,
+                    rgb(2 2 2 / 0%) 100%,
+                    rgb(0 0 0 / 0%) 0%,
+                    rgb(0 0 0 / 0%) 0%);
+            z-index: 1;
+        }
+
+        .carousel-item {
+            height: calc(100vh);
+
+            img {
+                width: 100%;
+                object-fit: cover;
+                height: 100%;
+            }
+
+            video {
+                width: 100%;
+                object-fit: cover;
+                height: 100%;
+            }
+
+            .carousel-caption {
+                z-index: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h1,
+                h2 {
+                    font-size: 48px;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 36rem) {
+        margin-top: 94px;
+
+        .carousel-inner {
+            height: 50vh;
+
+            .carousel-item {
+                height: 50vh;
+
+                .carousel-caption {
+                    z-index: 1;
+                    left: 5%;
+                    right: 5%;
+                    align-items: center;
+                    justify-content: center;
+                    display: flex;
+
+                    h1,
+                    h2 {
+                        font-size: 32px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.page-banner {
+    position: relative;
+    height: 41.25rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+
+    &.contact-page-banner {
+        .banner-title {
+            &.contact-page-title {
+                line-height: 0.77;
+                font-weight: 600;
+                font-size: 9.375rem;
+
+                @media (max-width: 90rem) {
+                    font-size: 8rem;
+                }
+
+                @media (max-width: 75rem) {
+                    font-size: 6rem;
+                }
+
+                @media (max-width: 62rem) {
+                    font-size: 3rem;
+                }
+            }
+        }
+    }
+}
+
+.background-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    overflow: hidden;
+
+    img {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        animation: zoom-and-move 30s ease-in-out infinite;
+        transform-origin: center center;
+    }
+}
+
+.page-banner-content {
+    position: relative;
+    width: 100%;
+    padding-bottom: 0;
+
+    .banner-title {
+        color: #fff;
+        font-weight: 600;
+        mix-blend-mode: soft-light;
+        font-size: 9.375rem;
+        line-height: 0.77;
+        margin: 0;
+        z-index: 2;
+        position: relative;
+
+        &.services-title {
+            font-size: 4.5rem;
+
+            @media (max-width: 90rem) {
+                font-size: 4rem;
+            }
+
+            @media (max-width: 75rem) {
+                font-size: 3rem;
+            }
+
+            @media (max-width: 62rem) {
+                font-size: 2.25rem;
+                line-height: 1.2;
+            }
+        }
+
+        &.how-to-work-title {
+            font-size: 6.25rem;
+
+            @media (max-width: 90rem) {
+                font-size: 5rem;
+            }
+
+            @media (max-width: 75rem) {
+                font-size: 4rem;
+            }
+
+            @media (max-width: 62rem) {
+                font-size: 3rem;
+                line-height: 1.2;
+            }
+
+            @media (max-width: 48rem) {
+                font-size: 2.25rem;
+                line-height: 1.2;
+            }
+        }
+
+        &.why-we-title {
+            font-size: 9.375rem;
+
+            @media (max-width: 90rem) {
+                font-size: 2rem;
+            }
+
+            @media (max-width: 75rem) {
+                font-size: 3rem;
+            }
+
+            @media (max-width: 62rem) {
+                font-size: 2.25rem;
+            }
+        }
+
+        @media (max-width: 90rem) {
+            font-size: 4rem;
+        }
+
+        @media (max-width: 75rem) {
+            font-size: 3rem;
+        }
+
+        @media (max-width: 62rem) {
+            font-size: 2.25rem;
+        }
+    }
+}
+
+.page-banner.full-banner {
+    height: 100vh;
+}
+
+.page-banner.short-banner {
+    height: 400px;
+}
+
+@media (max-width: 75rem) {
+    .page-banner {
+        height: 30rem;
+    }
+
+    .drone {
+        width: 4.375rem;
+    }
+}
+
+@import "./swiper.scss";
+
+#produtCarouselSlider {
+    position: relative;
+    overflow: hidden;
+
+    .swiper-wrapper {
+        height: 470px;
+        max-height: 470px;
+        min-height: 470px;
+        border-radius: 15px;
+
+        .swiper-slide {
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+                height: 100%;
+                border-radius: 15px;
+            }
+        }
+    }
+
+    .carousel-controls {
+        position: relative;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        align-items: center;
+        margin-top: 3rem;
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            background-color: $blue;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 10px;
+            color: #fff;
+            position: relative;
+            opacity: 1;
+            transition: all 0.3s ease-in-out;
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+
+            i {
+                background-color: #fff;
+            }
+
+            &:hover {
+                color: #fff;
+                background-color: $blue-hover;
+            }
+        }
+
+        .carousel-control-prev {
+            i {
+                background-color: #fff;
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    @media (max-width: 1200px) {
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+
+        .carousel-inner {
+            height: 420px;
+            max-height: 420px;
+            min-height: 20px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        margin-top: 4rem;
+
+        .carousel-inner {
+            height: 320px;
+            max-height: 320px;
+            min-height: 320px;
+        }
+    }
+}

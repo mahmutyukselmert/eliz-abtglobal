@@ -1,0 +1,44 @@
+{
+    "name": "eliz-abtglobal",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "dev-scss": "sass src/style.scss public/assets/css/main.css --watch",
+        "dev-js": "esbuild src/main.js --bundle --minify --outfile=public/assets/js/main.js --watch",
+        "dev-php": "php -S localhost:8000 -t public/",
+        "dev-bsync": "browser-sync start --proxy localhost:8000 --files 'public/**/*.html,public/**/*.php,public/assets/css/*.css,public/assets/js/*.js'",
+        "dev": "npm-run-all --parallel dev-scss dev-js dev-bsync dev-php",
+        "build-scss": "sass src/style.scss public/assets/css/main.css",
+        "build-postcss": "postcss public/assets/css/main.css -o public/assets/css/main.min.css",
+        "build-postcss-font": "postcss src/font.css -o public/assets/css/font.css",
+        "build-js": "esbuild src/main.js --bundle --minify --outfile=public/assets/js/main.js",
+        "build-slider-js": "esbuild src/slider.js --bundle --minify --outfile=public/assets/js/slider.min.js",
+        "build-image": "node src/image.js",
+        "build": "npm run build-scss && npm run build-postcss && npm run build-postcss-font && npm run build-js && npm run build-slider-js && npm run build-image"
+    },
+    "author": "Mahmut Yüksel MERT",
+    "main": "src/image.js",
+    "type": "module",
+    "license": "ISC",
+    "devDependencies": {
+        "@fullhuman/postcss-purgecss": "^7.0.2",
+        "browser-sync": "^2.29.3",
+        "cssnano": "^7.0.7",
+        "esbuild": "^0.25.5",
+        "imagemin-cli": "^8.0.0",
+        "npm-run-all": "^4.1.5",
+        "postcss": "^8.4.47",
+        "postcss-cli": "^10.1.0"
+    },
+    "dependencies": {
+        "bootstrap": "^5.3.7",
+        "countup.js": "^2.9.0",
+        "glob": "^11.0.3",
+        "imagemin": "^9.0.1",
+        "imagemin-webp": "^8.0.0",
+        "sass": "^1.89.2",
+        "scrollreveal": "^4.0.9",
+        "sharp": "^0.34.3",
+        "swiper": "^11.2.10"
+    }
+}

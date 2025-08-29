@@ -1,52 +1,83 @@
-/* unbounded-regular - latin_latin-ext */
+/* mona-sans-regular - latin_latin-ext */
 @font-face {
     font-display: swap;
     /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Unbounded';
+    font-family: 'Mona Sans';
     font-style: normal;
     font-weight: 400;
-    src: url('../fonts/unbounded-v11-latin_latin-ext-regular.woff2') format('woff2');
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url('../fonts/mona-sans-v3-latin_latin-ext-regular.woff2') format('woff2'),
+        /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url('../fonts/mona-sans-v3-latin_latin-ext-regular.ttf') format('truetype');
+    /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 }
 
-/* unbounded-500 - latin_latin-ext */
+/* mona-sans-500 - latin_latin-ext */
 @font-face {
     font-display: swap;
     /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Unbounded';
+    font-family: 'Mona Sans';
     font-style: normal;
     font-weight: 500;
-    src: url('../fonts/unbounded-v11-latin_latin-ext-500.woff2') format('woff2');
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url('../fonts/mona-sans-v3-latin_latin-ext-500.woff2') format('woff2'),
+        /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url('../fonts/mona-sans-v3-latin_latin-ext-500.ttf') format('truetype');
+    /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 }
 
-/* unbounded-600 - latin_latin-ext */
+/* mona-sans-600 - latin_latin-ext */
 @font-face {
     font-display: swap;
     /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Unbounded';
+    font-family: 'Mona Sans';
     font-style: normal;
     font-weight: 600;
-    src: url('../fonts/unbounded-v11-latin_latin-ext-600.woff2') format('woff2');
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url('../fonts/mona-sans-v3-latin_latin-ext-600.woff2') format('woff2'),
+        /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url('../fonts/mona-sans-v3-latin_latin-ext-600.ttf') format('truetype');
+    /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 }
 
-/* unbounded-700 - latin_latin-ext */
+/* mona-sans-700 - latin_latin-ext */
 @font-face {
     font-display: swap;
     /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Unbounded';
+    font-family: 'Mona Sans';
     font-style: normal;
     font-weight: 700;
-    src: url('../fonts/unbounded-v11-latin_latin-ext-700.woff2') format('woff2');
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url('../fonts/mona-sans-v3-latin_latin-ext-700.woff2') format('woff2'),
+        /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url('../fonts/mona-sans-v3-latin_latin-ext-700.ttf') format('truetype');
+    /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 }
 
+/* mona-sans-800 - latin_latin-ext */
 @font-face {
-    font-family: 'Encode Sans Expanded';
-    src: url('../fonts/subset-EncodeSansExpanded-Light.woff2') format('woff2'),
-        url('../fonts/subset-EncodeSansExpanded-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
     font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Mona Sans';
+    font-style: normal;
+    font-weight: 800;
+    src: url('../fonts/mona-sans-v3-latin_latin-ext-800.woff2') format('woff2'),
+        /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url('../fonts/mona-sans-v3-latin_latin-ext-800.ttf') format('truetype');
+    /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 }
+
+/* archivo-regular - latin_latin-ext */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Archivo';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/archivo-v24-latin_latin-ext-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+         url('../fonts/archivo-v24-latin_latin-ext-regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  }
+  /* archivo-600 - latin_latin-ext */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Archivo';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/archivo-v24-latin_latin-ext-600.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+         url('../fonts/archivo-v24-latin_latin-ext-600.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  }

@@ -3,16 +3,9 @@ window.bootstrap = bootstrap;
 
 import ScrollReveal from "scrollreveal";
 
-import "./slider.js";
-
 document.addEventListener("DOMContentLoaded", function () {
 
-  document.querySelector('#offcanvas-open-text').addEventListener('click', function () {
-    document.querySelector('button#offcanvas-open').click();
-  });
-
   // ScrollReveal animations
-
   const sr = ScrollReveal({
     duration: 1000,
     origin: "top",
@@ -84,29 +77,10 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", handleScroll);
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  var offcanvasElement = document.getElementById("navbarNav");
-  var headerElement = document.querySelector("header");
-  var logoElement = document.querySelector(
-    ".offcanvas-header .logo-wrapper img"
-  );
-  var logoOriginalSrc = logoElement.src;
-
-  offcanvasElement.addEventListener("show.bs.offcanvas", function () {
-    headerElement.classList.add("offcanvas-open");
-    logoElement.src = logoElement.dataset.offcanvaslogo;
-    document.body.classList.add("body-no-scroll");
-  });
-
-  offcanvasElement.addEventListener("hide.bs.offcanvas", function () {
-    headerElement.classList.remove("offcanvas-open");
-    logoElement.src = logoOriginalSrc;
-    document.body.classList.remove("body-no-scroll");
-  });
-});
-
 /* CountUp.js */
-import { CountUp } from "countup.js";
+import {
+  CountUp
+} from "countup.js";
 document.querySelectorAll(".countup").forEach((el) => {
   const value = parseInt(el.dataset.value);
   if (!isNaN(value)) {
@@ -123,8 +97,7 @@ document.querySelectorAll(".countup").forEach((el) => {
             }
           }
         });
-      },
-      {
+      }, {
         threshold: 0.6,
       }
     );
@@ -133,56 +106,6 @@ document.querySelectorAll(".countup").forEach((el) => {
   }
 });
 /* CountUp.js - End */
-
-document.addEventListener("DOMContentLoaded", function () {
-  const videoModal = document.getElementById("videoModal");
-  const modalVideo = document.getElementById("modalVideo");
-  const videoPoster = document.getElementById("videoPoster");
-  const playButton = document.querySelector(".play-button");
-  const thumbnails = document.querySelectorAll(".thumbnail");
-  
-  // Initialize with the first thumbnail's data
-  const initialThumbnail = document.querySelector(".thumbnail.active");
-  if (initialThumbnail) {
-    videoPoster.src = initialThumbnail.dataset.posterUrl;
-    if (modalVideo) {
-      modalVideo.src = initialThumbnail.dataset.videoUrl;
-      modalVideo.load();
-    }
-  }
-
-  // Add click event listener to each thumbnail
-  thumbnails.forEach((thumbnail) => {
-    thumbnail.addEventListener("click", () => {
-      // Remove 'active' class from all thumbnails
-      thumbnails.forEach((t) => t.classList.remove("active"));
-
-      // Add 'active' class to the clicked thumbnail
-      thumbnail.classList.add("active");
-
-      // Update the main poster image
-      videoPoster.src = thumbnail.dataset.posterUrl;
-
-      // Update the modal video source
-      if (modalVideo) {
-        modalVideo.src = thumbnail.dataset.videoUrl;
-        modalVideo.load();
-      }
-    });
-  });
-
-  // Handle modal show/hide events
-  if (videoModal && modalVideo) {
-    videoModal.addEventListener("show.bs.modal", () => {
-      modalVideo.play();
-    });
-    
-    videoModal.addEventListener("hidden.bs.modal", () => {
-      modalVideo.pause();
-      modalVideo.currentTime = 0;
-    });
-  }
-});
 
 //Custom Dropdown
 document.addEventListener("DOMContentLoaded", function () {
@@ -264,43 +187,6 @@ const observer = new IntersectionObserver((entries) => {
   });
 });
 
-/* MENÜ IMAGE */
-document.addEventListener("DOMContentLoaded", function () {
-  const pieSections = document.querySelectorAll(".pie-section");
-  const centerImage = document.getElementById("center-image");
-  const circularContainer = document.querySelector(
-    ".circular-gallery-container"
-  );
-  const originalImageSrc = centerImage.src;
-
-  pieSections.forEach((section) => {
-    section.addEventListener("mouseenter", function () {
-      const newImageSrc = this.getAttribute("data-image-src");
-      centerImage.src = newImageSrc;
-
-      // Animasyonları durdurma
-      circularContainer.style.animationPlayState = "paused";
-      this.style.animationPlayState = "paused";
-      centerImage.style.animationPlayState = "paused";
-
-      // Fareyle üzerine gelindiğinde büyüme efekti ekleme
-      this.style.transform = "scale(1.1)";
-    });
-
-    section.addEventListener("mouseleave", function () {
-      centerImage.src = originalImageSrc;
-
-      // Animasyonları devam ettirme
-      circularContainer.style.animationPlayState = "running";
-      this.style.animationPlayState = "running";
-      centerImage.style.animationPlayState = "running";
-
-      // Büyüme efektini kaldırma
-      this.style.transform = "scale(1)";
-    });
-  });
-});
-
 // Gözlemlemek istediğin tüm elementleri seç:
 const observerImageBox = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -314,7 +200,7 @@ document
   .querySelectorAll(".image-box")
   .forEach((el) => observerImageBox.observe(el));
 
-//Haber ve Proje Detay
+//Proje Detay
 import Swiper from "swiper/bundle";
 const swiper = new Swiper(".produtCarouselSlider", {
   slidesPerView: 1,
@@ -340,19 +226,61 @@ const swiper = new Swiper(".produtCarouselSlider", {
   },
 });
 
-// Sayfa yüklendiğinde ve DOM hazır olduğunda çalışacak kod bloğu
+document.addEventListener("DOMContentLoaded", function () {
+  const videoModal = document.getElementById("videoModal");
+  const modalVideo = document.getElementById("modalVideo");
+  const modalVideoSource = document.getElementById("modalVideoSource");
+  const videoPoster = document.getElementById("videoPoster");
+  const playButton = document.querySelector(".play-button");
+  const thumbnails = document.querySelectorAll(".thumbnail");
+
+  // Initialize with the first thumbnail's data
+  const initialThumbnail = document.querySelector(".thumbnail.active");
+  if (initialThumbnail) {
+    videoPoster.src = initialThumbnail.dataset.posterUrl;
+    modalVideoSource.src = initialThumbnail.dataset.videoUrl;
+    modalVideo.load();
+  }
+
+  // Add click event listener to each thumbnail
+  thumbnails.forEach((thumbnail) => {
+    thumbnail.addEventListener("click", () => {
+      // Remove 'active' class from all thumbnails
+      thumbnails.forEach((t) => t.classList.remove("active"));
+
+      // Add 'active' class to the clicked thumbnail
+      thumbnail.classList.add("active");
+
+      // Update the main poster image
+      videoPoster.src = thumbnail.dataset.posterUrl;
+
+      // Update the modal video source
+      modalVideoSource.src = thumbnail.dataset.videoUrl;
+      modalVideo.load();
+    });
+  });
+
+  if (videoModal && modalVideo) {
+    videoModal.addEventListener("hidden.bs.modal", () => {
+      modalVideo.pause();
+      modalVideo.currentTime = 0;
+    });
+
+    videoModal.addEventListener("show.bs.modal", () => {
+      modalVideo.currentTime = 0;
+      modalVideo.play();
+    });
+  }
+});
+
 document.addEventListener("DOMContentLoaded", () => {
-  // İlgili DOM öğelerinin varlığını kontrol et
   const thumbnailsContainer = document.querySelector(".thumbnails-container");
   const thumbnails = document.querySelectorAll(".thumbnail");
 
-  // Eğer gerekli öğeler (thumbnailsContainer ve en az bir thumbnail) varsa kodu çalıştır
   if (thumbnailsContainer && thumbnails.length > 0) {
-    // Kaydırma fonksiyonu
     function scrollToActiveThumbnail() {
       const activeThumbnail = document.querySelector(".thumbnail.active");
       if (activeThumbnail) {
-        // Aktif olan öğeyi kapsayıcının ortasına kaydır
         const offset =
           activeThumbnail.offsetLeft -
           thumbnailsContainer.offsetWidth / 2 +
@@ -364,13 +292,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // Her bir küçük resme tıklama olayı ekle
     thumbnails.forEach((thumbnail) => {
       thumbnail.addEventListener("click", () => {
-        // Önceki aktif küçük resmin aktifliğini kaldır
-        document.querySelector(".thumbnail.active")?.classList.remove("active");
+        // Önceki aktif küçük resmi bul ve aktifliğini kaldır
+        const currentActive = document.querySelector(".thumbnail.active");
+        if (currentActive) {
+          currentActive.classList.remove("active");
+        }
+
         // Tıklanan küçük resmi aktif yap
         thumbnail.classList.add("active");
+
         // Kaydırma fonksiyonunu çalıştır
         scrollToActiveThumbnail();
       });
@@ -379,4 +311,47 @@ document.addEventListener("DOMContentLoaded", () => {
     // Sayfa yüklendiğinde ilk aktif öğeye kaydır
     window.addEventListener("load", scrollToActiveThumbnail);
   }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const pageNumberEl = document.querySelector(".page-number");
+  const sliderContainer = document.querySelector(".product-image-slider");
+
+  // Eğer slider ve sayfa numarası elementleri sayfada yoksa, kodu çalıştırma
+  if (!sliderContainer || !pageNumberEl) {
+    console.error("Swiper sayfada yok o yüzden burada çalışmayacak.");
+    return;
+  }
+
+  const swiper = new Swiper(sliderContainer, {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: false,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    speed: 500,
+    navigation: {
+      nextEl: ".next-btn",
+    },
+
+    on: {
+      init: function () {
+        // Toplam slayt sayısını doğru bir şekilde al
+        const totalSlides = this.slides.length;
+        // Mevcut slayt numarasını ayarla
+        const currentSlide = this.activeIndex + 1;
+
+        // Sayfa numarasını güncelleme
+        pageNumberEl.textContent = `${String(currentSlide).padStart(2, '0')} / ${String(totalSlides).padStart(2, '0')}`;
+      },
+      slideChange: function () {
+        const totalSlides = this.slides.length;
+        const currentSlide = this.activeIndex + 1;
+
+        pageNumberEl.textContent = `${String(currentSlide).padStart(2, '0')} / ${String(totalSlides).padStart(2, '0')}`;
+      },
+    },
+  });
 });

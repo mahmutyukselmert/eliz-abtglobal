@@ -21,13 +21,32 @@
     }
 }
 
+
+.hero {
+    padding-top: 8rem;
+    padding-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+
+    @media (max-width: 36rem) {
+        padding-top: 0;
+    }
+}
+
+.bg-gradient-primary {
+    background: #FFC01E;
+    background: linear-gradient(0deg,rgba(255, 192, 30, 1) 60%, rgba(255, 255, 255, 1) 90%);
+}
+
 /* Carousel Slider */
 #carouselSlider {
     position: relative;
     overflow: hidden;
+    border-radius: 2.1875rem;
 
     .carousel-inner {
-        height: calc(100vh);
+        max-height: 75rem;
+        height: 75vh;
         z-index: 0;
 
         &::before {
@@ -48,7 +67,7 @@
         }
 
         .carousel-item {
-            height: calc(100vh);
+            height: 100%;
 
             img {
                 width: 100%;
@@ -65,13 +84,61 @@
             .carousel-caption {
                 z-index: 1;
                 display: flex;
-                justify-content: center;
                 align-items: center;
+                left: 10%;
 
                 h1,
                 h2 {
                     font-size: 48px;
-                    font-weight: 400;
+                    font-family: 'Mona Sans';
+                }
+            }
+        }
+    }
+
+    .carousel-controls {
+        position: absolute;
+        bottom: 0;
+        right: 3rem;
+        width: 9rem;
+        height: 6rem;
+        .carousel-control-prev, .carousel-control-next {
+            width: auto;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            width: 60px;
+            height: 60px;
+            opacity: 1;
+        }
+    }
+
+    @media (max-width: 1200px) {
+        .carousel-inner {
+            height: 60vh;
+            max-height: 60vh;
+
+            .carousel-item {
+                .carousel-caption {
+                    h1,
+                    h2 {
+                        font-size: 1.625rem;
+                    }
+                }
+            }
+        }
+
+        .carousel-controls {
+            right: 2rem;
+            width: 6rem;
+            height: 4rem;
+            .carousel-control-prev, .carousel-control-next {
+                width: 40px;
+                height: 40px;
+                border: 2px solid #fff;
+                margin: 0 auto;
+                span {
+                    width: 25px;
+                    height: 25px;
                 }
             }
         }
@@ -85,18 +152,10 @@
 
             .carousel-item {
                 height: 50vh;
-
                 .carousel-caption {
-                    z-index: 1;
-                    left: 5%;
-                    right: 5%;
-                    align-items: center;
-                    justify-content: center;
-                    display: flex;
-
                     h1,
                     h2 {
-                        font-size: 32px;
+                        font-size: 1.625rem;
                     }
                 }
             }
@@ -104,158 +163,23 @@
     }
 }
 
-.page-banner {
-    position: relative;
-    height: 41.25rem;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-
-    &.contact-page-banner {
-        .banner-title {
-            &.contact-page-title {
-                line-height: 0.77;
-                font-weight: 600;
-                font-size: 9.375rem;
-
-                @media (max-width: 90rem) {
-                    font-size: 8rem;
-                }
-
-                @media (max-width: 75rem) {
-                    font-size: 6rem;
-                }
-
-                @media (max-width: 62rem) {
-                    font-size: 3rem;
-                }
-            }
-        }
+.hero-bottom-section {
+    align-items: center;
+    padding-top: 3rem;
+    p {
+        font-size: 1.3125rem;
+        font-weight: 400;
+        color: #1a1a1a;
     }
-}
-
-.background-image-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 0;
-    overflow: hidden;
-
     img {
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        max-height: 215px;
         object-fit: cover;
-        animation: zoom-and-move 30s ease-in-out infinite;
-        transform-origin: center center;
+        transition: all 0.6s ease-in-out;
     }
-}
-
-.page-banner-content {
-    position: relative;
-    width: 100%;
-    padding-bottom: 0;
-
-    .banner-title {
-        color: #fff;
+    strong {
+        color: #000000;
+        font-size: 2.25rem;
         font-weight: 600;
-        mix-blend-mode: soft-light;
-        font-size: 9.375rem;
-        line-height: 0.77;
-        margin: 0;
-        z-index: 2;
-        position: relative;
-
-        &.services-title {
-            font-size: 4.5rem;
-
-            @media (max-width: 90rem) {
-                font-size: 4rem;
-            }
-
-            @media (max-width: 75rem) {
-                font-size: 3rem;
-            }
-
-            @media (max-width: 62rem) {
-                font-size: 2.25rem;
-                line-height: 1.2;
-            }
-        }
-
-        &.how-to-work-title {
-            font-size: 6.25rem;
-
-            @media (max-width: 90rem) {
-                font-size: 5rem;
-            }
-
-            @media (max-width: 75rem) {
-                font-size: 4rem;
-            }
-
-            @media (max-width: 62rem) {
-                font-size: 3rem;
-                line-height: 1.2;
-            }
-
-            @media (max-width: 48rem) {
-                font-size: 2.25rem;
-                line-height: 1.2;
-            }
-        }
-
-        &.why-we-title {
-            font-size: 9.375rem;
-
-            @media (max-width: 90rem) {
-                font-size: 2rem;
-            }
-
-            @media (max-width: 75rem) {
-                font-size: 3rem;
-            }
-
-            @media (max-width: 62rem) {
-                font-size: 2.25rem;
-            }
-        }
-
-        @media (max-width: 90rem) {
-            font-size: 4rem;
-        }
-
-        @media (max-width: 75rem) {
-            font-size: 3rem;
-        }
-
-        @media (max-width: 62rem) {
-            font-size: 2.25rem;
-        }
-    }
-}
-
-.page-banner.full-banner {
-    height: 100vh;
-}
-
-.page-banner.short-banner {
-    height: 400px;
-}
-
-@media (max-width: 75rem) {
-    .page-banner {
-        height: 30rem;
-    }
-
-    .drone {
-        width: 4.375rem;
     }
 }
 
@@ -296,7 +220,7 @@
 
         .carousel-control-prev,
         .carousel-control-next {
-            background-color: $blue;
+            background-color: $primary;
             width: 3rem;
             height: 3rem;
             border-radius: 10px;
@@ -313,7 +237,7 @@
 
             &:hover {
                 color: #fff;
-                background-color: $blue-hover;
+                background-color: $primary-hover;
             }
         }
 

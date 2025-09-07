@@ -12934,6 +12934,9 @@ header nav.navbar .nav-item .nav-link {
 header nav.navbar .nav-item .nav-link:hover {
   color: #ffc01e;
 }
+header nav.navbar .language-nav .nav-item {
+  margin: 0 0.5rem;
+}
 header nav.navbar .dropdown-menu {
   position: absolute;
   padding: 0.5rem 0rem;

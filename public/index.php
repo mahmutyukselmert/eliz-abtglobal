@@ -210,7 +210,7 @@
                     <div class="col-lg-4">
                         <div class="news-card">
                             <img src="./assets/images/yeni-damas-1.webp" class="card-img-top">
-                            <a href="" class="stretched-link">
+                            <a href="./haber-detay.php" class="stretched-link">
                                 <a>Yeni Damas tartım ünitesi "BAGFI"</a>
                             </a>
                         </div>

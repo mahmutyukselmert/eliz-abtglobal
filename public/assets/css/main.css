@@ -14430,6 +14430,9 @@ main .about-content-section img.left-image {
   background-color: #f8f8f8;
   box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.0901960784);
 }
+.home-products-section .product-image-slider .swiper-slide {
+  max-height: 664px;
+}
 .home-products-section .swiper-slide-active .product-card {
   border-radius: 25px;
 }

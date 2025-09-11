@@ -699,6 +699,9 @@ main {
     border-radius: 25px;
     background-color: #f8f8f8;
     box-shadow: 3px 3px 9px #00000017;
+    .swiper-slide {
+      max-height: 664px;
+    }
   }
 
   .swiper-slide-active {

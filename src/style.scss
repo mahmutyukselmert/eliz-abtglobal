@@ -699,9 +699,6 @@ main {
     border-radius: 25px;
     background-color: #f8f8f8;
     box-shadow: 3px 3px 9px #00000017;
-    .swiper-slide {
-      max-height: 664px;
-    }
   }
 
   .swiper-slide-active {
@@ -733,6 +730,19 @@ main {
         img {
           height: auto;
         }
+      }
+    }
+
+    &.small-card {
+      max-height: 330px;
+      min-height: 330px;
+      display: flex;
+      align-items: center;
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 80%;
+        max-height: 330px;
       }
     }
 
@@ -837,6 +847,9 @@ main {
         margin-top: 1.5rem;
         font-size: 1.5rem;
       }
+    }
+    .divider-short {
+      width: 100px;
     }
   }
 }
